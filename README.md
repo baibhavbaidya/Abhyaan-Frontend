@@ -1,16 +1,74 @@
-# React + Vite
+# Abhyaan — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React frontend for Abhyaan, an AI-native mini CRM for retail and D2C brands.
 
-Currently, two official plugins are available:
+**Live:** [abhyaan-frontend.vercel.app](https://abhyaan-frontend.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Backend:** [github.com/baibhavbaidya/Abhyaan-Backend](https://github.com/baibhavbaidya/Abhyaan-Backend)
 
-## React Compiler
+**Channel Stub:** [github.com/baibhavbaidya/Abhyaan-Channel-Stub](https://github.com/baibhavbaidya/Abhyaan-Channel-Stub)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## What is Abhyaan
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Abhyaan (Hindi for "campaign") is an AI-native CRM that helps retail brands decide who to talk to, what to say, and reach them through messaging channels. Instead of making marketers manually filter and segment, Abhyaan proactively surfaces campaign opportunities and lets marketers describe intent in plain English.
+
+---
+
+## Architecture
+
+![Abhyaan Architecture](./Abhyaan%20Architecture%20Diagram.jpg)
+
+---
+
+## Pages
+
+| Page | Route | Description |
+|---|---|---|
+| Dashboard | `/dashboard` | AI opportunity cards + customer stats |
+| Ask Abhyaan | `/chat` | Natural language campaign creation |
+| Campaigns | `/campaigns` | All launched campaigns with stats |
+| Analytics | `/analytics/:id` | Campaign funnel + AI insight |
+
+---
+
+## Tech Stack
+
+- React 18 + Vite
+- React Router DOM
+- Axios
+- Tailwind CSS
+- Deployed on Vercel
+
+---
+
+## Local Setup
+
+```bash
+git clone https://github.com/baibhavbaidya/Abhyaan-Frontend
+cd Abhyaan-Frontend
+npm install
+```
+
+Create a `.env` file:
+```
+VITE_API_URL=http://localhost:8000
+```
+
+Run:
+```bash
+npm run dev
+```
+
+Make sure the backend is running on port 8000.
+
+---
+
+## Key Features
+
+- **AI Opportunity Discovery** — on dashboard load, AI scans customer data and surfaces top 3-5 campaign opportunities with revenue estimates and reasoning
+- **Natural Language Campaigns** — describe a campaign in plain English, AI finds the segment, drafts the message, suggests the channel
+- **Edit and Launch** — pre-filled campaign modal with editable name, message and channel before launching
+- **Live Analytics** — campaign funnel showing sent, delivered, opened, clicked rates
+- **AI Insight** — post-campaign analysis with actionable recommendations
